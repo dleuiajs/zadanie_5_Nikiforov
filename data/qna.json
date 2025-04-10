@@ -1,0 +1,16 @@
+{
+    "otazky": [
+        "Otázka 1",
+        "Otázka 2",
+        "Otázka 3",
+        "Otázka 4",
+        "Otázka 5"
+    ],
+    "odpovede": [
+        "Odpoveď 1",
+        "Odpoveď 2",
+        "Odpoveď 3",
+        "Odpoveď 4",
+        "Odpoveď 5"
+    ]
+}

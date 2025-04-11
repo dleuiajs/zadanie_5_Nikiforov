@@ -36,7 +36,7 @@ class QnA extends Database
             $statement = $this->connection->prepare($sqlCreateTable);
             $statement->execute();
             http_response_code(200);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             echo "Chyba: " . $e->getMessage();
             http_response_code(500);
         }
@@ -65,7 +65,7 @@ class QnA extends Database
             // dokončíme transakciu a urobíme zmeny trvalými
             $this->connection->commit();
             http_response_code(200);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             echo "Chyba pri vkladaní dát do datábazý: " . $e->getMessage();
             // vraciame zmeny
             $this->connection->rollBack();
@@ -94,9 +94,11 @@ class QnA extends Database
             }
             echo '</section>';
             http_response_code(200);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             echo "Chyba pri čítaní dát z databázy: " . $e->getMessage();
             http_response_code(500);
+        } finally {
+            $this->connection = null;
         }
     }
 
